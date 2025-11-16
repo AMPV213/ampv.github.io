@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Confirmation - CargoFlow</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">Cargo<span class="logo-accent">Flow</span></div>
+        <div class="profile-icon">👤</div>
+    </header>
+
+    <main class="container">
+        <h2>✅ Your Delivery is Confirmed!</h2>
+        <p style="text-align: center; font-size: 1.1em; color: var(--color-success); font-weight: 600;">
+            Booking Reference Number: <span style="color: var(--color-primary);">CF20241117-001</span>
+        </p>
+
+        <div class="delivery-summary">
+            <h3>Delivery Summary</h3>
+            <p><span>Recipient Name:</span> <span id="contactNameSummary"></span></p>
+            <p><span>Recipient Phone:</span> <span id="contactPhoneSummary"></span></p>
+            
+            <p><span>Pickup Address:</span> <span id="pickupAddressSummary"></span></p>
+            <p><span>Delivery Address:</span> <span id="deliveryAddressSummary"></span></p>
+            <p><span>Shipment Type:</span> <span id="shipmentTypeSummary"></span></p>
+            <p><span>Weight/Dimensions:</span> <span id="weightSummary"></span> / <span id="dimensionsSummary"></span></p>
+            <p><span>Preferred Pickup Date:</span> <span id="preferredPickupDateSummary"></span></p>
+            <p><span>Delivery Option:</span> <span id="deliveryOptionSummary"></span></p>
+            <p><span>Total Price:</span> <span id="deliveryPriceSummary"></span></p>
+        </div>
+
+        <div class="driver-information">
+            <h3>🚚 Driver Assigned</h3>
+            <p><span>Name:</span> <span>Roberto Garcia</span></p>
+            <p><span>Plate Number:</span> <span>TGU-7890</span></p>
+            <p><span>Contact Number:</span> <span>+63 917 555 1234</span></p>
+            <p style="text-align: center; margin-top: 15px; font-style: italic; color: #666;">
+                Map information for live tracking will be displayed here.
+            </p>
+        </div>
+
+        <div class="delivery-options" style="display: flex; gap: 10px;">
+            <button class="btn btn-secondary" onclick="rescheduleDelivery()" style="flex-grow: 1;">Reschedule</button>
+            <button class="btn btn-secondary" onclick="alert('Cancel functionality is simulated. Your booking has been flagged for cancellation.')" style="flex-grow: 1;">Cancel</button>
+            <button class="btn btn-secondary" onclick="viewInvoice()" style="flex-grow: 1;">View Invoice</button>
+        </div>
+
+        <button class="btn btn-primary" onclick="clearLocalStorageAndGoToIndex()" style="margin-top: 20px;">
+            Return to Homepage
+        </button>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Call the confirmation function to load data from localStorage
+        confirmation();
+    </script>
+</body>
+</html>

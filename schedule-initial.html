@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Delivery - CargoFlow</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">Cargo<span class="logo-accent">Flow</span></div>
+        <div class="profile-icon">👤</div>
+    </header>
+
+    <main class="container">
+        <h2>Schedule a Delivery</h2>
+
+        <form id="initialForm">
+            <div class="form-group">
+                <label for="pickupAddress">Pickup Address:</label>
+                <input type="text" id="pickupAddress" name="pickupAddress" placeholder="Enter pickup address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="deliveryAddress">Delivery Address:</label>
+                <input type="text" id="deliveryAddress" name="deliveryAddress" placeholder="Enter delivery address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="shipmentType">Shipment Type:</label>
+                <select id="shipmentType" name="shipmentType" required>
+                    <option value="">Select Shipment Type</option>
+                    <option value="Document">Document (Letters, Small Packages)</option>
+                    <option value="Parcel">Parcel (Standard Boxes)</option>
+                    <option value="Freight">Freight (Pallets, Large Items)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" placeholder="Enter weight in kg" min="0.1" step="0.1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dimensions">Dimensions (L x W x H in cm):</label>
+                <input type="text" id="dimensions" name="dimensions" placeholder="e.g., 20x30x10" required>
+                <span class="tooltip">
+                    <small>(L x W x H)</small>
+                    <span class="tooltiptext">Enter dimensions separated by 'x'. Example: 20x30x10</span>
+                </span>
+            </div>
+
+            <div class="form-group">
+                <label for="preferredPickupDate">Preferred Pickup Date:</label>
+                <input type="date" id="preferredPickupDate" name="preferredPickupDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="preferredPickupTime">Preferred Pickup Time:</label>
+                <input type="time" id="preferredPickupTime" name="preferredPickupTime" required>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Continue to Options</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // FIX: Ensure the function is called only after script.js has loaded and the DOM is ready.
+        // We use DOMContentLoaded for faster execution than window.onload.
+        document.addEventListener('DOMContentLoaded', function() {
+            scheduleInitialForm();
+        });
+    </script>
+</body>
+</html>

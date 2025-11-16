@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Options - CargoFlow</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="window.location.href = 'schedule-initial.html'">Back to Details</button>
+        <div class="logo">Cargo<span class="logo-accent">Flow</span></div>
+        <div class="profile-icon">👤</div>
+    </header>
+
+    <main class="container">
+        <h2>Select Delivery Option</h2>
+
+        <div class="delivery-options">
+            <label class="delivery-card">
+                <input type="radio" name="deliveryOption" value="Standard" data-price="580" checked>
+                <div class="card-content">
+                    <h3>Standard</h3>
+                    <p>Estimated Delivery: 3-5 business days</p>
+                    <p>Price: ₱580.00</p>
+                </div>
+            </label>
+
+            <label class="delivery-card">
+                <input type="radio" name="deliveryOption" value="Express" data-price="1160">
+                <div class="card-content">
+                    <h3>Express</h3>
+                    <p>Estimated Delivery: 1-2 business days</p>
+                    <p>Price: ₱1160.00</p>
+                </div>
+            </label>
+
+            <label class="delivery-card">
+                <input type="radio" name="deliveryOption" value="Priority" data-price="1740">
+                <div class="card-content">
+                    <h3>Priority</h3>
+                    <p>Estimated Delivery: Next business day</p>
+                    <p>Price: ₱1740.00</p>
+                </div>
+            </label>
+        </div>
+
+        <div class="price-breakdown">
+            <h3>Price Breakdown (PHP)</h3>
+            <p><span>Base Fare:</span> <span>₱290.00</span></p>
+            <p><span>Fuel Surcharge:</span> <span>₱116.00</span></p>
+            <p><span>Delivery Option:</span> <span id="deliveryOptionPrice">₱580.00</span></p>
+            <p class="total"><span>Total Payable:</span> <span id="totalPrice">₱986.00</span></p>
+        </div>
+
+        <div class="form-group">
+            <label for="contactName">Recipient Name:</label>
+            <input type="text" id="contactName" placeholder="Enter recipient's name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="contactPhone">Recipient Phone:</label>
+            <input type="tel" id="contactPhone" placeholder="Enter recipient's phone number" required>
+        </div>
+
+        <div class="summary-section">
+            <h3>Shipment Summary</h3>
+            <p><span>Pickup Address:</span> <span id="pickupAddressSummary"></span></p>
+            <p><span>Delivery Address:</span> <span id="deliveryAddressSummary"></span></p>
+            <p><span>Type/Size:</span> <span id="shipmentTypeSummary"></span> / <span id="dimensionsSummary"></span> cm</p>
+            <p><span>Weight:</span> <span id="weightSummary"></span> kg</p>
+            <p><span>Preferred Pickup:</span> <span id="preferredPickupDateSummary"></span> at <span id="preferredPickupTimeSummary"></span></p>
+        </div>
+
+        <button class="btn btn-primary" onclick="deliveryOptionsContinue()">Confirm and Schedule</button>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        deliveryOptions();
+    </script>
+</body>
+</html>
