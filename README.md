@@ -23,17 +23,3 @@ File Structure
 | confirmation.html | Step 3: Displays the final booking summary and simulated driver details. |
 | script.js | Contains all JavaScript logic for data saving/loading and price calculation. |
 | style.css | Custom CSS for the CargoFlow branding and layout. |
-
-Deployment via GitHub Pages
-
-This project is configured for easy deployment via GitHub Pages.
-
-Push all files to your main branch (main or master).
-
-Go to your repository settings on GitHub.
-
-Navigate to "Pages".
-
-Set "Source" to deploy from the main branch (or master) and select the /(root) folder.
-
-Save the settings. Your site should be live at https://[your-username].github.io/[your-repo-name]/ shortly.
